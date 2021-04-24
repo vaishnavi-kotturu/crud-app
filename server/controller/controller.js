@@ -12,7 +12,9 @@ exports.create = (req,res)=>{
     const user = new Userdb({
       name : req.body.name,
       location : req.body.location,
+      city : req.body.city,
       contact : req.body.contact,
+
     //   gender: req.body.gender,
     //   status : req.body.status
   })

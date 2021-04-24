@@ -1,24 +1,37 @@
 <!-- form handling -->
 <form action="/api/users" method="POST" id="add_user">
-    <div class="new-user">
-        <div class="form-group">
-            <label for="name" class="text-light">Name of station</label>
-            <input type="hidden" name="id" value="">
-            <input type="text" name="name" value="" placeholder="Mark stoenis">
-        </div>
-        <div class="form-group">
-            <label for="location" class="text-light">Location</label>
-            <input type="hidden" name="id" value="">
-            <input type="text" name="location" value="" placeholder="123 GTB Nagar">
-        </div>
-
-        <div class="form-group">
-            <label for="Contact" class="text-light">Contact</label>
-            <input type="tel" name="contact" value="" placeholder="9876543210">
-        </div>
-
-        <div class="form-group">
-            <button type="submit" class="btn text-dark update">Save</button>
-        </div>
+  <div class="new-user">
+    <div class="form-group">
+      <label for="name" class="text-light">Name of station</label>
+      <input type="hidden" name="id" value="" />
+      <input type="text" name="name" value="" placeholder="Mark stoenis" />
     </div>
+    <div class="form-group">
+      <label for="location" class="text-light">Location</label>
+      <input type="hidden" name="id" value="" />
+      <input type="text" name="location" value="" placeholder="123 GTB Nagar" />
+    </div>
+
+    <div class="form-group">
+      <label for="city" class="text-light">City</label>
+      <div>
+        <input type="hidden" name="id" value="" />
+        <select name="city" value="">
+          <optgroup label="Select City">
+          <option for="city" value="Gwalior" name="city">Gwalior</option>
+          <option for="city" value="Indore" name="city">Indore</option></optgroup>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="Contact" class="text-light">Contact</label>
+      <input type="tel" name="contact" value="" placeholder="9876543210" />
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn text-dark update">Save</button>
+    </div>
+  </div>
 </form>
