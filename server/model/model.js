@@ -18,13 +18,16 @@ var schema=new mongoose.Schema({
     },
     
     contact: {
-        type: Number,
+        type: String,
         required: true,
     },
 
     availability: {
         type: String,
         required: true
+    },
+    timestamp:{
+        type:String
     }
     
 })
