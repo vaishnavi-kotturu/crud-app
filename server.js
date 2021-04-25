@@ -18,7 +18,7 @@ app.use(morgan('tiny'))
 connectDB();
 
 //pass request to body-parser
-app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyparser.urlencoded({extended:false}))
 
 //set view engine
 app.set("view engine","ejs")
