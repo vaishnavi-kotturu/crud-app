@@ -21,6 +21,11 @@ var schema=new mongoose.Schema({
         type: Number,
         required: true,
     },
+
+    availability: {
+        type: String,
+        required: true
+    }
     
 })
 

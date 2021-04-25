@@ -20,18 +20,18 @@
         <form method="POST" id="update_user">
             <div class="new-user">
                 <div class="form-group">
-                    <label for="name" class="text-light">Name of station</label>
+                    <!-- <label for="name" class="text-light">Name of station</label> -->
                     <input type="hidden" name="id" value="<%=user._id %>">
-                    <input type="text" name="name" value="<%=user.name %>" placeholder="Mark stoenis">
+                    <!-- <input type="text" name="name" value="<%=user.name %>" placeholder="Mark stoenis"> -->
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="location" class="text-light">Location</label>
                     <input type="text" name="location" value="<%=user.location %>" placeholder="123 GTB Nagar">
-                </div>
+                </div> -->
 
-                <!-- <div class="form-group"> -->
-                    <!-- <label for="gender" class="text-light">Gender</label> -->
-                    <!-- <div class="radio inline">
+                <!-- <div class="form-group">
+                    <label for="gender" class="text-light">Gender</label>
+                    <div class="radio inline">
                         <input type="radio" id="radio-2" name="gender" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %>>
                         <label for="radio-2" class="radio-label">Male</label>
                     </div>
@@ -42,18 +42,27 @@
                 </div> -->
 
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="city" class="text-light">City</label>
                     <select name="city" value="">
                         <option value="Gwalior" id=""<%= user.city == 'Gwalior' ? 'selected' : '' %>>Gwalior</option>
                         <option value="Indore" id="" <%= user.city == 'Indore' ? 'selected' : '' %>>Indore</option>
                     </select>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="availability" class="text-light">Availability</label>
+                    <select name="availability" value="">
+                        <option value="Yes" id=""<%= user.availability == 'Yes' ? 'selected' : '' %>>Yes</option>
+                        <option value="No" id="" <%= user.availability == 'No' ? 'selected' : '' %>>No</option>
+                    </select>
+                </div>
                 
                     
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="Contact" class="text-light">Contact</label>
                     <input type="tel" name="contact" value="<%= user.contact%>" placeholder="9876543210">
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <button type="submit" class="btn text-dark update">Save</button>

@@ -14,6 +14,7 @@ exports.create = (req,res)=>{
       location : req.body.location,
       city : req.body.city,
       contact : req.body.contact,
+      availability : req.body.availability
 
     //   gender: req.body.gender,
     //   status : req.body.status
