@@ -3,7 +3,7 @@ const { response } = require('express');
 const PORT=process.env.PORT||8080
 
 exports.homeRoutes=(req,res)=>{
-    //Make a get request to /api/users
+
     axios.get(`http://localhost:${PORT}/api/users`)
         .then(function(response){
             console.log(response.data)

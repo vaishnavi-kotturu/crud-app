@@ -1,19 +1,31 @@
 <% for(var i=0;i<users.length;i++) {%>
-<tr>
-    <td><%=i+1%></td>
-    <td><%=users[i].name%></td>
-    <td><%=users[i].location%></td>
-    <td><%=users[i].city%></td>
-    <td><%= users[i].contact %></td>
-    <td><%= users[i].availability %></td>
-    <td><%= users[i].timestamp %></td>
-    <td>
-        <a href="/update-user?id=<%=users[i]._id%>" class="btn border-shadow update">
-            <span class='text-gradient'><i class="fas fa-pencil-alt"></i></span>
-        </a>
-        <!-- <a class="btn border-shadow delete" data-id=<%=users[i]._id%>>
+  <div class="col-sm-4 col-sm outerbox">
+    <!-- <div class="serial_number"><%=i+1%></div> -->
+    <div class="box">
+    <div class="row innerbox">
+      <div class="container d-inline-flex p-2 bd-highlight">
+        <div class="heading"><%=users[i].name%></div>
+        <div class="details"><strong>Address:</strong> <%=users[i].location%></div>
+        <div class="details"><%=users[i].city%></div>
+        <div class="contact"><strong>Contact:</strong> <%= users[i].contact %></div>
+      </div>
+      <div class="container">
+        <div class="availability"><%= users[i].availability %></div>
+        <div class="timestamp"><%= users[i].timestamp %></div>
+        <div class="btn btn-outline-primary">
+          <a
+            href="/update-user?id=<%=users[i]._id%>"
+            class=""
+          >
+            <span class="text-gradient">Update <i class="fas fa-pencil-alt"></i></span>
+          </a>
+          <!-- <a class="btn border-shadow delete" data-id=<%=users[i]._id%>>
             <span class='text-gradient'><i class="fas fa-times"></i></span>
         </a> -->
-    </td>
-</tr>
-<%}%>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <%}%></users.length;i++)
+>
