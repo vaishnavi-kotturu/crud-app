@@ -4,33 +4,24 @@
 
 <!-- Main site -->
 <main id="site-main">
-    <div class="container">
-       <div class="box-nav d-flex justify-between">
+    <div class="container ">
+       <!-- <div class="btn btn-outline-primary button">
            <a href="/add-user" class="border-shadow">
                <span class="text-gradient">New User <i class="fas fa-user"></i></span>
            </a>
+       </div> -->
+
+       <div class="h2">
+           We provide the list of verified Oxygen gas filling stations. Update the availability wherever necessary.
        </div>
        <!-- form handling -->
        <form action="/" method="POST">
-       <table class="table">
-           <thead class="thead-dark">
-               <tr>
-                   <th>ID</th>
-                   <th>Name of station</th>
-                   <th>Location</th>
-                   <th>City</th>
-                   <th>Contact Details</th>
-                   <th>Availability</th>
-                   <th>Last Updated At</th>
-                   <th>Update Availability</th>
-               </tr>
-           </thead>
-           <div class="container">
+       <div class="">
                <div class="row">
             <%- include('include/_show')%>
         </div>
            </dic>
-       </table>
+        </div>
     </form>
     </div>
 </main>
