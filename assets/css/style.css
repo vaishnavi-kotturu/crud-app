@@ -90,6 +90,7 @@ body {
   margin-bottom: 0;
   margin-left: 0;
   align-items: flex-end;
+  background-color: #ffffff;
 }
 
 .button:active {
