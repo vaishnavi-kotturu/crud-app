@@ -48,6 +48,7 @@ body {
   border: 1px;
   border-radius: 5px;
   border-width: 2px;
+  height: 160px;
   background: #ffffff;
   box-shadow: 0 1.5rem 1.5rem rgb(0 0 0 / 15%);
 }
@@ -58,6 +59,7 @@ body {
 
 .outerbox {
   padding: 10px;
+  height: 200px;
 }
 .innerbox {
   padding: 10px;

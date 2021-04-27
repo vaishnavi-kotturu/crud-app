@@ -20,6 +20,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <!-- Header -->
     <header id="header">
@@ -28,10 +29,25 @@
           <a href="/">
             <img src="/img/1.png" alt="Logo" class="image">
           </a>
-            <div class="container text-heading"
-              >Oxygen Gas Filling Stations</div
-            >
+            <div class="container text-heading">
+              Oxygen Gas Filling Stations
+            </div>
         </div>
+        <input type="text" name="city" list="cityname" autocomplete="off" placeholder="Select a City">
+        <datalist id="cityname">
+          <option value="Ahmedabad">
+          <option value="Amritsar">
+          <option value="Chandigarh">
+          <option value="Delhi">
+          <option value="Gurugram">
+          <option value="Hyderabad">
+          <option value="Indore">
+          <option value="Kanpur">
+          <option value="Lucknow">
+          <option value="Mumbai">
+          <option value="Pune">
+        </datalist>
+        <button>Find</button>
       </nav>
     </header>
     <!-- /Header -->
