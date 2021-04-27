@@ -43,6 +43,7 @@ exports.find = (req, res)=>{
 
       Userdb.findById(id)
           .then(data =>{
+            //   console.log(data);
               if(!data){
                   res.status(404).send({ message : "Not found user with id "+ id})
               }else{
@@ -91,18 +92,20 @@ exports.update = (req, res)=>{
 
 exports.filtercity = (req, res)=>{
     const city = req.query.city; 
+    
     console.log(city);
     if(city){
         Userdb.find({ city: city }).sort( { timestamp : -1 } )
             .then(data =>{
+                console.log(data);
                 if(!data){
-                    res.status(404).send({ message : "Not found user with id "+ id})
+                    res.status(404).send({ message : "Not found user with city "+ city})
                 }else{
                     res.send(data)
                 }
             })
             .catch(err =>{
-                res.status(500).send({ message: "Erro retrieving user with id " + id})
+                res.status(500).send({ message: "Error retrieving user with city " + city})
             })
   
     }else{
