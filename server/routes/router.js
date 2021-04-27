@@ -43,6 +43,6 @@ route.get('/api/users',controller.find);
 route.put('/api/users/:id',controller.update);
 route.delete('/api/users/:id',controller.delete);
 
-route.get('/api/users/city:city', controller.filtercity);
+route.get('/api/filter', controller.filtercity);
 
 module.exports=route
