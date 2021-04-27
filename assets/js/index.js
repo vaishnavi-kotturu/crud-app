@@ -4,6 +4,30 @@ $("#add_user").submit(function(event){
     alert("Data Inserted successfully")
 })
 
+$("#search_city").submit(function(event){
+    event.preventDefault();
+
+    var unindexed_array=$(this).serializeArray();
+    var data={}
+
+    $.map(unindexed_array, function(n,i){
+        data[n['name']]= n['value']
+    })
+
+    console.log(data);
+    var $form = $( this ),
+    url = $form.attr( "action" );
+
+    var request={
+        "url":`${url}?city=${data.city}`,
+        "method":"GET"
+    }
+
+    $.ajax(request).done(function(response){
+        alert("Data searched")
+    })
+})
+
 $("#update_user").submit(function(event){
     event.preventDefault();
 
