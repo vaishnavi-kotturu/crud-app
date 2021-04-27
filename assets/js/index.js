@@ -1,4 +1,4 @@
-const PORT=process.env.PORT||8080
+// const PORT=process.env.PORT||8080
 
 $("#add_user").submit(function(event){
     alert("Data Inserted successfully")
@@ -17,7 +17,7 @@ $("#update_user").submit(function(event){
     console.log(data);
 
     var request={
-        "url":`http://localhost:${PORT}/api/users/${data.id}`,
+        "url":`http://localhost:3000/api/users/${data.id}`,
         "method":"PUT",
         "data":data
     }
@@ -32,7 +32,7 @@ if(window.location.pathname=="/"){
     $ondelete.click(function(){
         var id=$(this).attr("data-id")
         var request={
-            "url":`http://localhost:${PORT}/api/users/${id}`,
+            "url":`http://localhost:3000/api/users/${id}`,
             "method":"DELETE",
         }
 
