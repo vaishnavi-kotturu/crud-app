@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// const PORT=process.env.PORT||8080
-=======
 
->>>>>>> 740e84ea4b91b9916717f51d4d7dd52cd095f3d8
 
 $("#add_user").submit(function(event){
     alert("Data Inserted successfully")
@@ -23,11 +19,7 @@ $("#update_user").submit(function(event){
     url = $form.attr( "action" );
 
     var request={
-<<<<<<< HEAD
-        "url":`http://localhost:3000/api/users/${data.id}`,
-=======
         "url":`${url}${data.id}`,
->>>>>>> 740e84ea4b91b9916717f51d4d7dd52cd095f3d8
         "method":"PUT",
         "data":data
     }
@@ -42,7 +34,7 @@ if(window.location.pathname=="/"){
     $ondelete.click(function(){
         var id=$(this).attr("data-id")
         var request={
-            "url":`http://localhost:3000/api/users/${id}`,
+            "url":`http://localhost:${PORT}/api/users/${id}`,
             "method":"DELETE",
         }
 
