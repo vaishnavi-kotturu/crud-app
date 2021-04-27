@@ -59,7 +59,7 @@
                     <input type="hidden" name="id" value="<%=user._id %>">
                     <label for="availability" class="text-light">Fill the latest availability of the station: </label>
                     <select name="availability" value="" class="input-box">
-                        <option selected>Availability</option>
+                        <!-- <option value="">--Please choose an option--</option> -->
                         <option value="Yes" id=""<%= user.availability == 'Yes' ? 'selected' : '' %>>Yes</option>
                         <option value="No" id="" <%= user.availability == 'No' ? 'selected' : '' %>>No</option>
                     </select>
