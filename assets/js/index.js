@@ -1,4 +1,4 @@
-const PORT=process.env.PORT||8080
+
 
 $("#add_user").submit(function(event){
     alert("Data Inserted successfully")
@@ -15,9 +15,11 @@ $("#update_user").submit(function(event){
     })
 
     console.log(data);
+    var $form = $( this ),
+    url = $form.attr( "action" );
 
     var request={
-        "url":`http://localhost:${PORT}/api/users/${data.id}`,
+        "url":`${url}${data.id}`,
         "method":"PUT",
         "data":data
     }
