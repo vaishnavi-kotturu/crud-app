@@ -13,7 +13,7 @@ route.get('/', (req,res)=>{
 
     axios.get(`http://localhost:${PORT}/api/users`)
         .then(function(response){
-            console.log(response.data)
+            // console.log(response.data)
             res.render('index',{users:response.data});
         })
         .catch(err=>{
@@ -38,11 +38,22 @@ route.get('/update-user',(req,res)=>{
         })
 })
 
+route.get('/filter-city',(req,res)=>{
+    // const city = req.query.city;
+    axios.get(`http://localhost:${PORT}/api/filter`,{params:{city:req.query.city}})
+        .then(function(userdata){
+            res.render("index",{users:userdata.data});
+        })
+        .catch(err=>{
+            res.send(err);
+        })
+})
 //API
 route.post('/api/users',controller.create);
 route.get('/api/users',controller.find);
 route.put('/api/users/:id',controller.update);
 route.delete('/api/users/:id',controller.delete);
 
+route.get('/api/filter', controller.filtercity);
 
 module.exports=route
