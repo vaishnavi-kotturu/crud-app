@@ -4,29 +4,26 @@
     <div class="box">
       <div class="row innerbox">
         <div class="container items-2">
-          <div class="heading"><%=users[i].name%></div>
+          <div class="heading details"><%=users[i].name%></div>
           <div class="details">
-            <strong>Address:</strong> <%=users[i].location%>
+            <!-- <strong>Address:</strong> -->
+            <%=users[i].location%>
           </div>
-          <div class="details"><%=users[i].city%></div>
-          <div class="contact">
-            <strong>Contact:</strong> <%= users[i].contact %>
+          <div class="details">City: <strong><%=users[i].city%></strong></div>
+          <div class="contact details">
+            Contact: <strong><%= users[i].contact %></strong>
           </div>
-          <div class="availability">Availability: </><%= users[i].availability %></div>
+          <div class="availability details">Availability: </><%= users[i].availability %></div>
         </div>
         <div class="container items">
+          <div class="timestamp">Last Update: <strong><br><%= users[i].timestamp %></strong></div>
           <div class="btn btn-outline-primary button">
             <a href="/update-user?id=<%=users[i]._id%>" class="">
               <span class="text-button"
                 >Update <i class="fas fa-pencil-alt"></i
               ></span>
             </a>
-            <!-- <a class="btn border-shadow delete" data-id=<%=users[i]._id%>>
-            <span class='text-gradient'><i class="fas fa-times"></i></span>
-        </a> -->
           </div>
-          
-          <div class="timestamp"><%= users[i].timestamp %></div>
         </div>
       </div>
     </div>
