@@ -149,8 +149,12 @@ body {
 }
 .availability {
   font-size: large;
-  font-weight: bold;
+  /* font-weight: normal; */
   color: #018312;
+}
+
+.text-lighter {
+  font-weight: normal;
 }
 
 .input-box {
@@ -160,7 +164,7 @@ body {
 
 .availability-box {
   text-align: center;
-  padding: 20px 0 10px 0;
+  padding: 40px 0 10px 0;
   margin-bottom: 0;
   font-size: large;
 }

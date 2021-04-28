@@ -16,8 +16,8 @@
            </div>
        </div>
        <div class="form-title text-center">
-           <h2 class="text-dark">Update Station</h2>
-           <span class="text-light">Kindly fill the most accurate details of the oxygen gas filling station</span>
+           <div class="text-dark h1">Update Station</div>
+           <span class="text-light h3">Kindly fill the most accurate details of the oxygen gas filling station</span>
        </div>
 
        <!-- add user form -->
@@ -57,7 +57,7 @@
 
                 <div class="form-group container availability-box">
                     <input type="hidden" name="id" value="<%=user._id %>">
-                    <label for="availability" class="text-light">Fill the latest availability of the station: </label>
+                    <label for="availability" class="text-light"><div class="text-lighter">Fill the latest availability of the station: </div></label>
                     <select name="availability" value="" class="input-box">
                         <!-- <option value="">--Please choose an option--</option> -->
                         <option value="Yes" id=""<%= user.availability == 'Yes' ? 'selected' : '' %>>Yes</option>
