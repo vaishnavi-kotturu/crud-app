@@ -25,22 +25,13 @@
     <!-- Header -->
     <header id="header">
       <nav>
-        <div class="row nav-innerbox nav-items">
+        <div class="row nav-innerbox nav-items logo">
           <a href="/">
             <img src="/img/1.png" alt="Logo" class="image">
           </a>
-          <!-- <div class="container text-heading"
-            >Oxygen Gas Filling Stations
-           </div>
-        </div> -->
-        <div class="container text-heading">
-          <a href="/helpline">Helpline</a>
-            <!-- <div class="container text-heading">
-              Oxygen Gas Filling Stations
-            </div> -->
-            <!-- <form method="POST" action="/filter-city" id="search_city"> -->
-              <!-- <input type="text" id="name" name="city"> -->
-              <input type="text" name="city" id="name" list="cityname" autocomplete="off" placeholder="Select a City">
+        </div>
+        <div class="search">
+              <input type="text" name="city" id="name" list="cityname" autocomplete="off" placeholder="Select your City" class="searchbar">
               <datalist id="cityname">
                 <option value="Ahmedabad">
                 <option value="Amritsar">
@@ -55,11 +46,11 @@
                 <option value="Pune">
               </datalist>
               <a href="" id="my_anchor">
-                <button type="submit" class="btn btn-outline-primary button" onclick=' document.getElementById( "my_anchor" ).href = "/filter-city?city=" + document.getElementById("name").value'>Save</button>
+                <button type="submit" class="btn btn-outline-primary button" onclick=' document.getElementById( "my_anchor" ).href = "/filter-city?city=" + document.getElementById("name").value'><i class="fas fa-search"></i></button>
               </a>
             <!-- </form> -->
-
         </div>
+        <a href="/helpline" class="container nav-innerbox nav-items text-heading">Helpline</a>
       </nav>
     </header>
     <!-- /Header -->
