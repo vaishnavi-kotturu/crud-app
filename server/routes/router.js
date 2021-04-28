@@ -24,6 +24,7 @@ route.get('/', (req,res)=>{
 // @description Add Users Route, @method GET
 
 route.get('/add-user', services.add_user)
+route.get('/helpline', services.helpline)
 
 // @description Update Users Route, @method GET
 
