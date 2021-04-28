@@ -214,7 +214,7 @@ body {
 .search {
   /* align-items: center; */
   display: flex;
-  /* border: 2px solid #ffffff; */
+
   position: relative;
   /* display: flex; */
   flex-wrap: wrap;
@@ -224,7 +224,7 @@ body {
 
 .searchbar {
   border-radius: 2px;
-  border: 2px solid #ffffff;
+  border: 1px solid #000000;
   height: 100%;
   /* font-size: large; */
   padding: 7px 2px;
