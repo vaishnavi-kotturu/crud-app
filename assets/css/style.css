@@ -282,10 +282,20 @@ body {
   cursor: pointer;
   padding: 18px;
   width: 100%;
-  border: none;
+  /* border: none; */
   text-align: left;
   outline: none;
   font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  border-color: rgba(196, 182, 182, 0.966);
+  border-width: 0.01px;
+  border-radius: 0.1em;
+}
+
+.divide{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .active,
@@ -297,6 +307,7 @@ body {
   padding: 0 18px;
   display: none;
   overflow: hidden;
+  padding: 18px;
   background-color: #f1f1f1;
 }
 
