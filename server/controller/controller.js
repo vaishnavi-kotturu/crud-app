@@ -55,7 +55,7 @@ exports.find = (req, res)=>{
           })
 
   }else{
-      Userdb.find()
+      Userdb.find().sort( { timestamp : -1 } )
           .then(user => {
               res.send(user)
           })
