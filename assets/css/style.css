@@ -42,7 +42,7 @@ body {
 }
 
 #site-main {
-  background-color: #ffe99269;
+  background-color: #dedbcf69;
   padding-bottom: 3em;
 }
 
@@ -51,11 +51,7 @@ body {
   font-size: large;
   font-weight: bold;
 }
-.details {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-between; */
-}
+
 
 .box {
   /* border: 1px solid #ffe992; */
@@ -176,13 +172,13 @@ body {
   padding-top: 5px;
 } */
 
-.h1 {
+.h2 {
   padding: 15px 0 0 0;
   margin-top: 0;
   font-weight: bolder;
 }
 
-.h3 {
+.h4 {
   padding: 0 0 10px 0;
 }
 .items-2 {
