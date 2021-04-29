@@ -30,8 +30,17 @@ var schema=new mongoose.Schema({
         type:String
     }
     
-})
+});
+
+// var schema2=new mongoose.Schema({
+//     city: {
+//         type: String, unique : true, required : true, dropDups: true
+//     }    
+// });
+
 
 const Userdb=mongoose.model('userdb',schema);
+// const Citydb=mongoose.model('citydb',schema2);
 
-module.exports=Userdb
+module.exports=Userdb; 
+// module.exports={Userdb, Citydb};
