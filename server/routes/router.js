@@ -13,7 +13,18 @@ route.get('/', services.homeRoutes)
 
 // @description Add Users Route, @method GET
 
-route.get('/add-user', services.add_user)
+// route.get('/helpline', services.helpline)
+
+route.get('/helpline',(req,res)=>{
+    axios.get(`http://localhost:${PORT}/api/city`)
+        .then(function(citydata){
+            const cities = citydata.data; 
+            res.render("helpline",{cities})
+        })
+        .catch(err=>{
+            res.send(err);
+        })
+})
 // route.get('/helpline', services.helpline)
 
 // @description Update Users Route, @method GET
@@ -36,11 +47,11 @@ route.get('/filter-city',(req,res)=>{
       })
 })
 
-route.get('/helpline',(req,res)=>{
+route.get('/add-user',(req,res)=>{
     axios.get(`http://localhost:${PORT}/api/city`)
         .then(function(citydata){
             const cities = citydata.data; 
-            res.render("helpline",{cities})
+            res.render("add_user",{cities})
         })
         .catch(err=>{
             res.send(err);

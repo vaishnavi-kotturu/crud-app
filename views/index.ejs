@@ -4,26 +4,24 @@
 
 <!-- Main site -->
 <main id="site-main">
-    <div class="container ">
-       <!-- <div class="btn btn-outline-primary button">
-           <a href="/add-user" class="border-shadow">
-               <span class="text-gradient">New User <i class="fas fa-user"></i></span>
-           </a>
-       </div> -->
-
-       <div class="h2">
-           Oxygen Suppliers
-       </div>
-       <div class="h4">Update the availability of Oxygen once you connect with the supplier.</div>
-       <!-- form handling -->
-       <form action="/" method="POST">
-       <div class="">
-               <div class="row">
-            <%- include('include/_show')%>
-                </div>
-        </div>
-    </form>
+  <div class="container roww">
+    <div class="col-sm-10">
+      <div class="h2">Oxygen Suppliers</div>
+      <div class="h4">
+        Update the availability of Oxygen once you connect with the supplier.
+      </div>
     </div>
+      <a href="/add-user" class="border-shadow btn btn-outline-primary button col-sm-2">
+        <span class="text-gradient">Add New Suppliers  <i class="fas fa-user"></i></span>
+      </a>
+
+    <!-- form handling -->
+    <form action="/" method="POST">
+      <div class="">
+        <div class="row"><%- include('include/_show')%></div>
+      </div>
+    </form>
+  </div>
 </main>
 <!-- /Main site -->
 
