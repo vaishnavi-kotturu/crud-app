@@ -1,4 +1,7 @@
 var Userdb = require('../model/model');
+// var Citydb = require('../model/model').Citydb;
+const axios=require('axios');
+
 
 // create and save new user
 exports.create = (req,res)=>{
@@ -7,7 +10,6 @@ exports.create = (req,res)=>{
       res.status(400).send({ message : "Content can not be emtpy!"});
       return;
   }
-
     // new user
     const user = new Userdb({
       name : req.body.name,
@@ -35,6 +37,37 @@ exports.create = (req,res)=>{
         });
 
 }
+
+// create and save new city
+exports.create_city = (req,res)=>{
+    // validate request
+    // if(!req.body){
+    //     res.status(400).send({ message : "Content can not be emtpy!"});
+    //     return;
+    // }
+    //   // new city
+    //   const citi = new Citydb({
+    //     city : req.body.city
+    // })
+  
+    //   // save city in the database
+    //   citi
+    //       .save(citi)
+    //       .then(data => {
+    //           //res.send(data)
+    //         //   res.redirect('/add-user');
+    //         res.status(200).send({
+    //             message : "City added succesfully"
+    //         });
+    //       })
+    //       .catch(err =>{
+    //           res.status(500).send({
+    //               message : err.message || "Some error occurred while creating a create operation"
+    //           });
+    //       });
+  
+}
+
 // retrieve and return all users/ retrive and return a single user
 exports.find = (req, res)=>{
 
@@ -62,10 +95,29 @@ exports.find = (req, res)=>{
           .catch(err => {
               res.status(500).send({ message : err.message || "Error Occurred while retriving user information" })
           })
-  }
-
-  
+  }  
 }
+
+//retrieve and return all cities
+exports.get_city = (req, res)=>{
+        Userdb.distinct('city')
+        .then(data => {
+            // console.log(data); 
+            res.send(data); 
+        })
+        .catch(err => {
+            res.status(500).send({message:"duh"});
+        })
+
+        // Citydb.find()
+        //     .then(city => {
+        //         res.send(city)
+        //     })
+        //     .catch(err => {
+        //         res.status(500).send({ message : err.message || "Error Occurred while retriving user information" })
+        //     })   
+}
+  
 
 // Update a new idetified user by user id
 exports.update = (req, res)=>{
@@ -89,7 +141,7 @@ exports.update = (req, res)=>{
       })
 }
 
-
+// Filter users based on city
 exports.filtercity = (req, res)=>{
     const city = req.query.city; 
     
@@ -119,10 +171,10 @@ exports.filtercity = (req, res)=>{
     }
   
     // console.log("hit");
-  }
+}
   
-  // Update a new idetified user by user id
-  exports.update = (req, res)=>{
+// Update a new idetified user by user id
+exports.update = (req, res)=>{
     if(!req.body){
         return res
             .status(400)
@@ -141,8 +193,7 @@ exports.filtercity = (req, res)=>{
         .catch(err =>{
             res.status(500).send({ message : "Error Update user information"})
         })
-  }
-  
+}
 
 // Delete a user with specified user id in the request
 exports.delete = (req, res)=>{

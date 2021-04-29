@@ -56,39 +56,34 @@
           </a>
         </div>
         <div class="search col-sm-6">
-          <input
-            type="text"
-            name="city"
-            id="name"
-            list="cityname"
-            autocomplete="off"
-            placeholder="Select your City"
-            class="searchbar"
-          />
-          <datalist id="cityname">
-            <option value="Ahmedabad"></option>
-            <option value="Amritsar"></option>
-            <option value="Chandigarh"></option>
-            <option value="Delhi"></option>
-            <option value="Gurugram"></option>
-            <option value="Hyderabad"></option>
-            <option value="Indore"></option>
-            <option value="Kanpur"></option>
-            <option value="Lucknow"></option>
-            <option value="Mumbai"></option>
-            <option value="Pune"></option>
-          </datalist>
+              <input type="text" name="city" id="name" list="cityname" autocomplete="off" placeholder="Select your City" class="searchbar">
+              <datalist id="cityname">
+                <!-- <option value="Ahmedabad">
+                <option value="Amritsar">
+                <option value="Chandigarh">
+                <option value="Delhi">
+                <option value="Gurugram">
+                <option value="Hyderabad">
+                <option value="Indore">
+                <option value="Kanpur">
+                <option value="Lucknow">
+                <option value="Mumbai">
+                <option value="Pune"> -->
+                
+                <!-- <% for(var i=0;i<cities.length;i++) {%>
+                  <option value="<%=cities[i].city%>">
+                <%}%> -->
 
-          <a href="" id="my_anchor">
-            <button
-              type="submit"
-              class="btn btn-outline-primary button"
-              onclick=' document.getElementById( "my_anchor" ).href = "/filter-city?city=" + document.getElementById("name").value'
-            >
-              <i class="fas fa-search"></i>
-            </button>
-          </a>
-          <!-- </form> -->
+                <% cities.forEach(function(city){ %>
+                  <!-- <% console.log(city); %> -->
+                  <option value="<%= city %>">
+                <% }) %>
+
+              </datalist>
+              <a href="" id="my_anchor">
+                <button type="submit" class="btn btn-outline-primary button" onclick=' document.getElementById( "my_anchor" ).href = "/filter-city?city=" + document.getElementById("name").value'><i class="fas fa-search"></i></button>
+              </a>
+            <!-- </form> -->
         </div>
         <a
           href="/helpline"
