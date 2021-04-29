@@ -4,7 +4,7 @@
 <script>
     function getTimeStamp() {
        var now = new Date();
-       return  ( ((now.getHours() < 10) ? ("0" + now.getHours()) : (now.getHours())) + ':'+ ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes()))+" - "+now.getDate())+ '/' +((now.getMonth() + 1) );
+       return  ( " - "+now.getDate())+ '/' +((now.getMonth() + 1) + " - " + ((now.getHours() < 10) ? ("0" + now.getHours()) : (now.getHours())) + ':'+ ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())));
 }
 </script>
 <!-- Main site -->
