@@ -10,7 +10,17 @@
       Please reach out to these helpline nos. for any query related to
       COVID-19.
     </div>
-    <div class="container roww">
+
+    <!-- <form action="/api/number" method="POST"> -->
+      <div class="">
+    <% for(var j=0;j<helpline.length;j++) {%>
+              <div class="heading details"><%=helpline[j].state%></div>
+              <div class="details">Number: <strong><%=helpline[j].number%></strong></div>
+      <%}%>
+    </div>
+    <!-- </form> -->
+
+    <!-- <div class="container roww">
       <div class="col-sm-3 col-xs-12 button-box">
         <button class="collapsible">Central Helpline No.</button>
         <div class="content">+91-11-23978046</div>
@@ -159,7 +169,7 @@
       <div class="col-sm-3 col-xs-12 button-box">
         <button class="collapsible">West Bengal</button>
         <div class="content">1800313444222, 03323412600</div>
-      </div>
+      </div> -->
     </div>
   </div>
 </main>

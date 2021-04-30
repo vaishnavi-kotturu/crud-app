@@ -13,19 +13,31 @@ route.get('/', services.homeRoutes)
 
 // @description Add Users Route, @method GET
 
-// route.get('/helpline', services.helpline)
 
-route.get('/helpline',(req,res)=>{
-    axios.get(`http://localhost:${PORT}/api/city`)
-        .then(function(citydata){
-            const cities = citydata.data; 
-            res.render("helpline",{cities})
-        })
-        .catch(err=>{
-            res.send(err);
-        })
-})
 // route.get('/helpline', services.helpline)
+route.get('/helpline',(req,res)=>{
+    let one = `http://localhost:${PORT}/api/helpline`;
+    let two = `http://localhost:${PORT}/api/city`;
+    const requestOne = axios.get(one);
+    const requestTwo = axios.get(two);
+
+    axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
+        const responseOne = responses[0];
+        const responseTwo = responses[1];
+        const cities = responseTwo.data; 
+        res.render('helpline',{helpline:responseOne.data, cities}); 
+      })).catch(err => { 
+            res.send(err);
+      })
+
+        // .then(function(numberdata){
+        //     const number = numberdata.data; 
+        //     res.render("helpline",{number})
+        // })
+        // .catch(err=>{
+        //     res.send(err);
+        // })
+})
 
 // @description Update Users Route, @method GET
 
@@ -68,5 +80,6 @@ route.get('/api/filter', controller.filtercity);
 
 // route.post('/api/city', controller.create_city);
 route.get('/api/city', controller.get_city);
+route.get('/api/helpline', controller.get_no);
 
 module.exports=route

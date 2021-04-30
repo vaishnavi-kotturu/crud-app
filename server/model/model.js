@@ -32,15 +32,23 @@ var schema=new mongoose.Schema({
     
 });
 
-// var schema2=new mongoose.Schema({
-//     city: {
-//         type: String, unique : true, required : true, dropDups: true
-//     }    
-// });
+var schema2=new mongoose.Schema({
+    state: {
+        type: String,
+        required : true,
+    },
+    number: {
+        type: String,
+        required : true,
+    } 
+},
+    { collection : 'helpline_nosdb' }
+);
 
 
 const Userdb=mongoose.model('userdb',schema);
-// const Citydb=mongoose.model('citydb',schema2);
+const Helplineno=mongoose.model('helpline_nosdb',schema2);
 
-module.exports=Userdb; 
-// module.exports={Userdb, Citydb};
+// module.exports=Userdb;
+// module.exports=Helplineno;
+module.exports={Userdb, Helplineno};
