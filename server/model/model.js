@@ -42,7 +42,7 @@ var schema2=new mongoose.Schema({
         required : true,
     } 
 },
-    { collection : 'helpline_nosdb' }
+    { collection : 'helpline_nosdbs' }
 );
 
 
