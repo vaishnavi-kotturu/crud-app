@@ -5,7 +5,6 @@ const dotenv=require('dotenv');
 const PORT=process.env.PORT||8080; 
 
 exports.homeRoutes=(req,res)=>{
-
     let one = `http://localhost:${PORT}/api/users`;
     let two = `http://localhost:${PORT}/api/city`;
     const requestOne = axios.get(one);
