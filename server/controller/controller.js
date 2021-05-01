@@ -36,34 +36,6 @@ exports.create = (req, res) => {
     });
 };
 
-// create and save new city
-// exports.create_city = (req, res) => {
-  // validate request
-  // if(!req.body){
-  //     res.status(400).send({ message : "Content can not be emtpy!"});
-  //     return;
-  // }
-  //   // new city
-  //   const citi = new Citydb({
-  //     city : req.body.city
-  // })
-  //   // save city in the database
-  //   citi
-  //       .save(citi)
-  //       .then(data => {
-  //           //res.send(data)
-  //         //   res.redirect('/add-user');
-  //         res.status(200).send({
-  //             message : "City added succesfully"
-  //         });
-  //       })
-  //       .catch(err =>{
-  //           res.status(500).send({
-  //               message : err.message || "Some error occurred while creating a create operation"
-  //           });
-  //       });
-// };
-
 // retrieve and return all users/ retrive and return a single user
 exports.find = (req, res) => {
   if (req.query.id) {
@@ -138,12 +110,12 @@ exports.update = (req, res) => {
 exports.filtercity = (req, res) => {
   const city = req.query.city;
 
-  console.log(city);
+  // console.log(city);
   if (city) {
     Userdb.find({ city: city })
       .sort({ timestamp: -1 })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (!data) {
           res.status(404).send({ message: "Not found user with city " + city });
         } else {
@@ -220,21 +192,6 @@ exports.delete = (req, res) => {
       });
     });
 };
-
-//retrieve and return helpline nos
-
-// exports.create = (req, res) => {
-//   // validate request
-//   if (!req.body) {
-//     res.status(400).send({ message: "Content can not be emtpy!" });
-//     return;
-//   }
-//   // new user
-//   const user1 = new Helplineno({
-//     state: req.body.state,
-//     number: req.body.number,
-//   });
-// };
 
 exports.get_no = (req, res) => {
   // const id = req.query.id;
