@@ -7,20 +7,21 @@ const axios=require('axios');
 
 const services=require('../services/render');
 const controller=require('../controller/controller');
-// @description Root Route, @method GET
 
+// @description Root Route, @method GET
 route.get('/', services.homeRoutes)
 
 // @description Add Users Route, @method GET
+route.get('/add-user', services.add_user);
 
-
+// @description Route for viewing helpline, @method GET
 route.get('/helpline', services.helpline)
 
 // @description Update Users Route, @method GET
-
 route.get('/update-user', services.update_user)
-route.get('/add-user', services.add_user)
-route.get('/filter-city',services.filterCity)
+
+route.get('/filter-city', services.filter_city)
+
 
 //API
 route.post('/api/users',controller.create);
