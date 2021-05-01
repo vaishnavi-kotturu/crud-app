@@ -31,6 +31,17 @@ exports.add_user=(req,res)=>{
         })
 }
 
+exports.helplinelink=(req,res)=>{
+    axios.get(`http://localhost:${PORT}/api/city`)
+        .then(function(citydata){
+            const cities = citydata.data; 
+            res.render("helplinelink",{cities})
+        })
+        .catch(err=>{
+            res.send(err);
+        })
+}
+
 exports.helpline=(req,res)=>{
     let one = `http://localhost:${PORT}/api/helpline`;
     let two = `http://localhost:${PORT}/api/city`;
@@ -46,6 +57,7 @@ exports.helpline=(req,res)=>{
             res.send(err);
       })
 }
+
 
 
 exports.update_user=(req,res)=>{

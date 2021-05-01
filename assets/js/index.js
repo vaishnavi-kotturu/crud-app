@@ -14,7 +14,7 @@ $("#search_city").submit(function(event){
         data[n['name']]= n['value']
     })
 
-    console.log(data);
+    // console.log(data);
     var $form = $( this ),
     url = $form.attr( "action" );
 
@@ -38,7 +38,7 @@ $("#update_user").submit(function(event){
         data[n['name']]= n['value']
     })
 
-    console.log(data);
+    // console.log(data);
     var $form = $( this ),
     url = $form.attr( "action" );
 

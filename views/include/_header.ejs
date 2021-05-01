@@ -53,7 +53,7 @@
       <nav class="roww">
         <div class="nav-innerbox nav-items logo col-sm-3">
           <a href="/">
-            <img src="/img/1.png" alt="Logo" class="image col-sm-6" />
+            <img src="/img/1.png" alt="Logo" class="image col-sm-3" />
           </a>
         </div>
         <div class="search col-sm-6">
@@ -61,7 +61,6 @@
               <datalist id="cityname">
 
                 <% cities.forEach(function(city){ %>
-                  <!-- <% console.log(city); %> -->
                   <option value="<%= city %>">
                 <% }) %>
 
@@ -77,6 +76,12 @@
         >
           Helpline
         </a>
+        <a
+        href="/helplinelink"
+        class="container nav-innerbox nav-items text-heading col-sm-3"
+      >
+        Helpline
+      </a>
       </nav>
     </header>
     <!-- /Header -->

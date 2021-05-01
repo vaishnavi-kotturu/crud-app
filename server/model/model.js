@@ -43,7 +43,6 @@ var schema2=new mongoose.Schema({
     { collection : 'helpline_nosdbs' }
 );
 
-
 const Userdb=mongoose.model('userdb',schema);
 const Helplineno=mongoose.model('helpline_nosdb',schema2);
 

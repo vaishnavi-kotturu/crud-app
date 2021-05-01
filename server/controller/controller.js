@@ -194,8 +194,6 @@ exports.delete = (req, res) => {
 };
 
 exports.get_no = (req, res) => {
-  // const id = req.query.id;
-
   Helplineno.find()
       .then((helpline) => {
         res.send(helpline);
@@ -206,6 +204,21 @@ exports.get_no = (req, res) => {
           .send({
             message:
               err.message || "Error Occurred while retriving user information",
+          });
+      });
+};
+
+exports.helplinelink = (req,res) => {
+  this.helplinelink()
+      .then((link) => {
+        res.send(link);
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({
+            message:
+              err.message || "Rehne do tum, Non Coder",
           });
       });
 };

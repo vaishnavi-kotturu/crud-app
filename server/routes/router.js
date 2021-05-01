@@ -15,12 +15,12 @@ route.get('/', services.homeRoutes)
 route.get('/add-user', services.add_user);
 
 // @description Route for viewing helpline, @method GET
-route.get('/helpline', services.helpline)
+route.get('/helpline', services.helpline);
 
 // @description Update Users Route, @method GET
-route.get('/update-user', services.update_user)
-
-route.get('/filter-city', services.filter_city)
+route.get('/update-user', services.update_user);
+route.get('/filter-city', services.filter_city);
+route.get('/helplinelink', services.helplinelink);
 
 
 //API
@@ -30,9 +30,8 @@ route.put('/api/users/:id',controller.update);
 route.delete('/api/users/:id',controller.delete);
 
 route.get('/api/filter', controller.filtercity);
-
-// route.post('/api/city', controller.create_city);
 route.get('/api/city', controller.get_city);
 route.get('/api/helpline', controller.get_no);
+route.get('/api/helplinelink', controller.helplinelink);
 
 module.exports=route
