@@ -6,8 +6,7 @@ var schema=new mongoose.Schema({
         required:true
     },
     location:{
-        type:String,
-        required:true,
+        type:String
         // unique:true
     },
     city: {
@@ -29,7 +28,6 @@ var schema=new mongoose.Schema({
     timestamp:{
         type:String
     }
-    
 });
 
 var schema2=new mongoose.Schema({

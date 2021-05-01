@@ -3,12 +3,6 @@ var Helplineno = require("../model/model").Helplineno;
 const axios = require("axios");
 const mongoose=require('mongoose');
 
-function find (name, query, cb) {
-  mongoose.connection.db.collection(name, function (err, collection) {
-     collection.find(query).toArray(cb);
- });
-}
-
 // create and save new user
 exports.create = (req, res) => {
   // validate request
@@ -114,14 +108,6 @@ exports.get_city = (req, res) => {
     .catch((err) => {
       res.status(500).send({ message: "duh" });
     });
-
-  // Citydb.find()
-  //     .then(city => {
-  //         res.send(city)
-  //     })
-  //     .catch(err => {
-  //         res.status(500).send({ message : err.message || "Error Occurred while retriving user information" })
-  //     })
 };
 
 // Update a new idetified user by user id
@@ -265,17 +251,4 @@ exports.get_no = (req, res) => {
               err.message || "Error Occurred while retriving user information",
           });
       });
-
-  // Helplineno.findById(id)
-  //   .then((data) => {
-  //     //   console.log(data);
-  //     if (!data) {
-  //       res.status(404).send({ message: "Not found user with id " + id });
-  //     } else {
-  //       res.send(data);
-  //     }
-  //   })
-  //   .catch((err) => {
-  //     res.status(500).send({ message: "Erro retrieving user with id " + id });
-  //   });
 };
