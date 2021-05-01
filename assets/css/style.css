@@ -379,6 +379,13 @@ body {
   padding-top: 20px;
 }
 
+.availability-button {
+  margin-right: 10px;
+}
+
+.h5 {
+  margin-top: 0;
+}
 /* justify-content: center;
   display: flex;
   flex-direction: column;
