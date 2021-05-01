@@ -3,6 +3,39 @@ var Helplineno = require("../model/model").Helplineno;
 const axios = require("axios");
 const mongoose=require('mongoose');
 
+function compare_ts(a, b) {
+  var ia=a.timestamp.search("/");
+  var ib=b.timestamp.search("/");
+  var ia2=a.timestamp.search("-");
+  var ib2=b.timestamp.search("-");
+  var ia3=a.timestamp.search(" ");
+  var ib3=b.timestamp.search(" ");
+
+  if(a.timestamp.slice(ia+1,ia3)>b.timestamp.slice(ib+1,ib3)){
+    return -1;
+  }
+  else if(a.timestamp.slice(ia+1,ia3)<b.timestamp.slice(ib+1,ib3)){
+    return 1;
+  }
+  else{
+    if(a.timestamp.slice(0,ia)>b.timestamp.slice(0,ib)){
+      return -1;
+    }
+    else if(a.timestamp.slice(0,ia)<b.timestamp.slice(0,ib)){
+      return 1;
+    }
+    else{
+      if(a.timestamp.slice(ia2)>b.timestamp.slice(ib2)){
+          return -1;
+      }
+      else if(a.timestamp.slice(ia2)<b.timestamp.slice(ib2)){
+        return 1;
+      }
+      else return 0;
+    }
+  }
+}
+
 // create and save new user
 exports.create = (req, res) => {
   // validate request
@@ -57,6 +90,7 @@ exports.find = (req, res) => {
     Userdb.find()
       .sort({ timestamp: -1 })
       .then((user) => {
+        user.sort(compare_ts);
         res.send(user);
       })
       .catch((err) => {
