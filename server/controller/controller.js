@@ -265,17 +265,4 @@ exports.get_no = (req, res) => {
               err.message || "Error Occurred while retriving user information",
           });
       });
-
-  // Helplineno.findById(id)
-  //   .then((data) => {
-  //     //   console.log(data);
-  //     if (!data) {
-  //       res.status(404).send({ message: "Not found user with id " + id });
-  //     } else {
-  //       res.send(data);
-  //     }
-  //   })
-  //   .catch((err) => {
-  //     res.status(500).send({ message: "Erro retrieving user with id " + id });
-  //   });
 };

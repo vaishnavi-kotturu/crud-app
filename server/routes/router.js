@@ -14,61 +14,13 @@ route.get('/', services.homeRoutes)
 // @description Add Users Route, @method GET
 
 
-// route.get('/helpline', services.helpline)
-route.get('/helpline',(req,res)=>{
-    let one = `http://localhost:${PORT}/api/helpline`;
-    let two = `http://localhost:${PORT}/api/city`;
-    const requestOne = axios.get(one);
-    const requestTwo = axios.get(two);
-
-    axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
-        const responseOne = responses[0];
-        const responseTwo = responses[1];
-        const cities = responseTwo.data; 
-        res.render('helpline',{helpline:responseOne.data, cities}); 
-      })).catch(err => { 
-            res.send(err);
-      })
-
-        // .then(function(numberdata){
-        //     const number = numberdata.data; 
-        //     res.render("helpline",{number})
-        // })
-        // .catch(err=>{
-        //     res.send(err);
-        // })
-})
+route.get('/helpline', services.helpline)
 
 // @description Update Users Route, @method GET
 
 route.get('/update-user', services.update_user)
-
-route.get('/filter-city',(req,res)=>{
-    let one = `http://localhost:${PORT}/api/filter`;
-    let two = `http://localhost:${PORT}/api/city`;
-    const requestOne = axios.get(one,{params:{city:req.query.city}});
-    const requestTwo = axios.get(two);
-
-    axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
-        const responseOne = responses[0];
-        const responseTwo = responses[1];
-        const cities = responseTwo.data; 
-        res.render('index',{users:responseOne.data, cities}); 
-      })).catch(err => { 
-            res.send(err);
-      })
-})
-
-route.get('/add-user',(req,res)=>{
-    axios.get(`http://localhost:${PORT}/api/city`)
-        .then(function(citydata){
-            const cities = citydata.data; 
-            res.render("add_user",{cities})
-        })
-        .catch(err=>{
-            res.send(err);
-        })
-})
+route.get('/add-user', services.add_user)
+route.get('/filter-city',services.filterCity)
 
 //API
 route.post('/api/users',controller.create);
