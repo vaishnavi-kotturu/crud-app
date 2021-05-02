@@ -237,7 +237,7 @@ body {
   padding-top: 2em;
 }
 #header {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   z-index: 100;
   box-shadow: 0.1px 1px 10px #fffbed;
