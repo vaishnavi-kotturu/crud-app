@@ -386,6 +386,29 @@ body {
 .h5 {
   margin-top: 0;
 }
+
+.title {
+  font-weight: bold;
+  margin-top: 0px;
+  padding-top: 15px;
+  border-top: 2px solid #ffffff;
+}
+
+.helpline-link {
+  font-weight: bold;
+  color: #383a8e;
+}
+
+.description {
+  padding-bottom: 10px;
+  /* border-bottom: 1px solid #000000; */
+}
+
+.description-title {
+  color: #6f6f6f;
+  font-weight: bold;
+}
+
 /* justify-content: center;
   display: flex;
   flex-direction: column;
