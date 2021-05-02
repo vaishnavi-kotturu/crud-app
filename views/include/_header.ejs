@@ -50,38 +50,42 @@
 
     <!-- Header -->
     <header id="header">
-      <nav class="roww">
-        <div class="nav-innerbox nav-items logo col-sm-2">
+      <nav class="topnav">
+        <div class="active logo">
           <a href="/">
-            <img src="/img/1.png" alt="Logo" class="image col-sm-6" />
+            <img src="/img/1.png" alt="Logo" class="image" />
           </a>
         </div>
-        <div class="search col-sm-6">
-              <input type="text" name="city" id="name" list="cityname" autocomplete="off" placeholder="Select your City" class="searchbar">
-              <datalist id="cityname">
 
-                <% cities.forEach(function(city){ %>
-                  <option value="<%= city %>">
-                <% }) %>
+        <a href="/helpline" class="nav-items text-heading">Helpline</a>
 
-              </datalist>
-              <a href="" id="my_anchor">
-                <button type="submit" class="btn btn-outline-primary button" onclick=' document.getElementById( "my_anchor" ).href = "/filter-city?city=" + document.getElementById("name").value'><i class="fas fa-search"></i></button>
-              </a>
-            <!-- </form> -->
+        <a href="/helplinelink" class="nav-items text-heading">Useful Links</a>
+
+        <div class="search">
+          <input
+            type="text"
+            name="city"
+            id="name"
+            list="cityname"
+            autocomplete="off"
+            placeholder="Select your City"
+            class="searchbar"
+          />
+          <datalist id="cityname">
+            <% cities.forEach(function(city){ %>
+            <option value="<%= city %>"><% }) %></option>
+          </datalist>
+
+          <a href="" id="my_anchor">
+            <button
+              type="submit"
+              class="btn btn-outline-primary button"
+              onclick=' document.getElementById( "my_anchor" ).href = "/filter-city?city=" + document.getElementById("name").value'
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </a>
         </div>
-        <a
-          href="/helpline"
-          class="container nav-innerbox nav-items text-heading col-sm-2"
-        >
-          Helpline
-        </a>
-        <a
-        href="/helplinelink"
-        class="container nav-innerbox nav-items text-heading col-sm-2"
-      >
-        Useful Links
-      </a>
       </nav>
     </header>
     <!-- /Header -->
