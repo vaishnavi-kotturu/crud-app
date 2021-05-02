@@ -433,6 +433,10 @@ body {
   /* border: none; */
 }
 
+.a {
+  background-color: #ffe992;
+}
+
 .topnav .search-container button {
   float: right;
   padding: 6px 10px;
@@ -450,6 +454,7 @@ body {
 
 @media screen and (max-width: 600px) {
   .topnav .search-container {
+    background-color: #ffe992;
     float: none;
   }
   .topnav a,
