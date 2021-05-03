@@ -86,7 +86,7 @@ body {
   /* height: 54.61px; */
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   flex-wrap: wrap;
   align-items: center;
 }
@@ -201,11 +201,11 @@ body {
   /* padding-right: 50px; */
 }
 
-.nav-items {
+/* .nav-items {
   align-items: center;
-  /* background-color: #b1a16a; */
+  /* background-color: #b1a16a;
   justify-content: flex-end;
-}
+} */
 
 /* #my_anchor {
   border: 1px solid #ffffff;
@@ -237,7 +237,7 @@ body {
   padding-top: 2em;
 }
 #header {
-  /* position: sticky; */
+  position: relative;
   top: 0;
   z-index: 100;
   box-shadow: 0.1px 1px 10px #fffbed;
@@ -305,9 +305,9 @@ body {
   background-color: #ffffff;
 }
 
-.collapsible:hover {
+/* .collapsible:hover {
   background-color: #ffe992;
-}
+} */
 
 .content {
   background-color: #ffffff;
@@ -323,10 +323,10 @@ body {
   flex-wrap: wrap;
 }
 
-.active,
+/* .active,
 .collapsible:hover {
-  background-color: #ccc;
-}
+  background-color: #ffe992;
+} */
 
 .content {
   padding: 0 18px;
@@ -348,7 +348,7 @@ body {
 .form-button {
   width: 40%;
   padding: 10px;
-  background-color: #ffe992;
+  /* background-color: #ffe992; */
 }
 
 .form-button:hover {
@@ -471,221 +471,97 @@ body {
     border: 1px solid #ccc;
   }
 }
-/* justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 
-/* .d-flex {
-  display: flex;
-  flex-wrap: wrap;
+ul {
+  margin-bottom: 0;
+}
+li {
+  list-style: none;
 }
 
-.justify-between {
+.hamburger {
+  display: none;
+}
+
+.navbar {
+  display: flex;
   justify-content: space-between;
+  margin-bottom: 0;
+  align-items: center;
+  padding: 1rem 1.5rem;
 }
 
-.text-center {
-  text-align: center;
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
 }
 
-.border-shadow {
-  border: 1px solid var(--border-btn);
-  box-shadow: 1px 3px 10px #e9ecef;
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.text-dark {
-  color: var(--dark);
+.nav-item {
+  margin-left: 5rem;
 }
 
-.inline {
-  display: inline-block;
+.nav-link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #e9c93c;
 }
 
-.text-light {
-  color: var(--light);
+.nav-link:hover {
+  color: #e9c93c;
 }
 
-.text-gradient {
-  background: linear-gradient(to right, #e22d2d, #e00000);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #e9c93c;
 }
 
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
 
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
 
-#site-main {
-  margin-top: 6em;
-  font-family: "Barlow", sans-serif;
-}
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 
-#site-main .container .box-nav > a {
-  font-size: 1em;
-  padding: 0.5em 1em;
-}
+  .nav-menu.active {
+    right: 0;
+  }
 
-#site-main .container form {
-  margin: 2em 0;
-}
+  .nav-item {
+    margin: .5rem 0;
+  }
 
-table {
-  border-spacing: 0px;
-  width: 100%;
-}
-
-.table td,
-.table th {
-  padding: 0.75em;
-  vertical-align: top;
-  text-align: center;
-  border-top: 1px solid var(--border);
-}
-
-.table td > a.btn {
-  padding: 0.3em 1em;
-  font-size: 1.1em;
-  margin: 0 0.2em;
-}
-
-.table tr:hover {
-  background-color: #fac1c1;
-}
-
-.table tr:hover td > a {
-  box-shadow: none;
-}
-
-.table .thead-dark th {
-  color: #fff;
-  background-color: var(--dark);
-  border-color: #32383e;
-}
-
-@media only screen and (max-width: 1024px) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
+  .hamburger {
     display: block;
-  }
-
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  tr {
-    border: 1px solid var(--border);
-  }
-
-  td {
-    border: none;
-    position: relative;
+    cursor: pointer;
   }
 }
-
-/*  add user & update user template */
-/* .form-title {
-  margin-top: 2em;
-}
-
-.form-title > h2 {
-  padding: 0.5em 0;
-}
-
-.new_user {
-  max-width: 786px;
-  margin: auto;
-}
-
-#update_user .form-group,
-#add_user .form-group {
-  margin: 0.4em 0;
-}
-
-#update_user .form-group input[type="text"],
-#update_user .form-group input[type="tel"],
-#update_user .form-group select,
-#add_user .form-group select,
-#add_user .form-group input[type="tel"],
-#add_user .form-group input[type="text"] {
-  width: 100%;
-  padding: 0.6em 1em;
-  margin: 0.5em 0;
-  border: 1px solid var(--border);
-  font-family: "Barlow", sans-serif;
-  font-size: 1em;
-  border-radius: 0.2em;
-}
-
-#update_user .form-group .radio,
-#add_user .form-group .radio {
-  margin: 1em 2em;
-}
-/* adding style to radio buttons */
-/* .radio input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-}
-
-.radio input[type="radio"] + .radio-label:before {
-  content: "";
-  background: var(--border-btn);
-  border-radius: 100%;
-  border: 1px solid var(--border);
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  position: relative;
-  top: -0em;
-  margin-right: 0.5em;
-  vertical-align: top;
-  cursor: pointer;
-  text-align: center;
-  -webkit-transition: all 250ms ease;
-  transition: all 250ms ease;
-}
-
-.radio input[type="radio"]:checked + .radio-label:before {
-  background-color: #fac1c1;
-  box-shadow: inset 0 0 0 4px #e9ecef;
-}
-
-.radio input[type="radio"]:focus + .radio-label:before {
-  outline: none;
-  border-color: #fac1c1;
-}
-
-.radio input[type="radio"]:disabled + .radio-label:before {
-  box-shadow: inset 0 0 0 4px #e9ecef;
-  border-color: #b4b4b4;
-  background: #b4b4b4;
-}
-
-.radio-inline {
-  display: inline;
-  padding: 0 2rem 0 2rem;
-}
-#update_user .form-group .btn,
-#add_user .form-group .btn {
-  width: 100%;
-  padding: 0.9em 1em;
-  background-color: #fac1c1;
-  border: none;
-  font-family: "PT Sans", sans-serif;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 0.2em;
-  margin: 0.5em 0;
-}
-
-#update_user .form-group .btn:hover,
-#add_user .form-group .btn:hover {
-  background-color: var(--dark);
-  color: var(--border);
-} */

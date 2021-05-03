@@ -50,42 +50,72 @@
 
     <!-- Header -->
     <header id="header">
-      <nav class="topnav">
-        <div class="active logo a">
+      <nav class="navbar">
+        <div class="nav-logo">
           <a href="/">
             <img src="/img/1.png" alt="Logo" class="image" />
           </a>
         </div>
 
-        <a href="/helpline" class="nav-items text-heading">Helpline</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="/helpline" class="text-heading">Helpline</a>
+          </li>
 
-        <a href="/helplinelink" class="nav-items text-heading">Useful Links</a>
-
-        <div class="search">
-          <input
-            type="text"
-            name="city"
-            id="name"
-            list="cityname"
-            autocomplete="off"
-            placeholder="Select your City"
-            class="searchbar"
-          />
-          <datalist id="cityname">
-            <% cities.forEach(function(city){ %>
-            <option value="<%= city %>"><% }) %></option>
-          </datalist>
-
-          <a href="" id="my_anchor">
-            <button
-              type="submit"
-              class="btn btn-outline-primary button"
-              onclick=' document.getElementById( "my_anchor" ).href = "/filter-city?city=" + document.getElementById("name").value'
+          <li class="nav-item">
+            <a href="/helplinelink" class="text-heading"
+              >Useful Links</a
             >
-              <i class="fas fa-search"></i>
-            </button>
-          </a>
-        </div>
+          </li>
+
+          <li class="nav-item">
+            <div class="search">
+              <input
+                type="text"
+                name="city"
+                id="name"
+                list="cityname"
+                autocomplete="off"
+                placeholder="Select your City"
+                class="searchbar"
+              />
+              <datalist id="cityname">
+                <% cities.forEach(function(city){ %>
+                <option value="<%= city %>"><% }) %></option>
+              </datalist>
+
+              <a href="" id="my_anchor">
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary button"
+                  onclick=' document.getElementById( "my_anchor" ).href = "/filter-city?city=" + document.getElementById("name").value'
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="hamburger text-heading">
+          <!-- Helpline <i class="fas fa-caret-down"></i> -->
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </div>
+
+      <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+      
+        hamburger.addEventListener("click", mobileMenu);
+      
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+      </script>
+
       </nav>
     </header>
     <!-- /Header -->
