@@ -21,7 +21,7 @@ route.get('/helpline', services.helpline);
 route.get('/update-user', services.update_user);
 route.get('/filter-city', services.filter_city);
 route.get('/helplinelink', services.helplinelink);
-
+route.get('/filter-supplier', services.filter_supplier);
 
 //API
 route.post('/api/users',controller.create);
@@ -33,5 +33,6 @@ route.get('/api/filter', controller.filtercity);
 route.get('/api/city', controller.get_city);
 route.get('/api/helpline', controller.get_no);
 route.get('/api/helplinelink', controller.helplinelink);
+route.get('/api/suppliers', controller.filtersupplier);
 
 module.exports=route
