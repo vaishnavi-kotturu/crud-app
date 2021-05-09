@@ -180,7 +180,44 @@ exports.filtercity = (req, res) => {
   // console.log("hit");
 };
 
-// Update a new idetified user by user id
+// Filter users based on supplier name
+exports.filtersupplier = (req, res) => {
+  const supplier = req.query.supplier;
+  if (supplier) {
+    Userdb.find({ "name" : new RegExp(supplier)})
+      .sort({ timestamp: -1 })
+      .then((data) => {
+        // console.log(data);
+        if (!data) {
+          res.status(404).send({ message: "Not found user with name " + supplier });
+        } else {
+          res.send(data);
+        }
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ message: "Error retrieving user with name " + supplier });
+      });
+  } else {
+    Userdb.find()
+      .sort({ timestamp: -1 })
+      .then((user) => {
+        res.send(user);
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({
+            message:
+              err.message || "Error Occurred while retriving user information",
+          });
+      });
+  }
+
+};
+
+// Update a new identified user by user id
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({ message: "Data to update can not be empty" });

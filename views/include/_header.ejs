@@ -95,6 +95,25 @@
               </a>
             </div>
           </li>
+          <li class="nav-item">
+            <div class="search_supplier">
+              <input type="text" name="name" id="name1" list="suppliername" autocomplete="off" placeholder="Select the Supplier" class="searchbar" />
+              <datalist id="suppliername">
+                <% users.forEach(function(supplier){ %>
+                <option value="<%= supplier.name %>"><% }) %></option>
+              </datalist>
+
+              <a href="" id="my_anchor1">
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary button"
+                  onclick=' document.getElementById( "my_anchor1" ).href = "/filter-supplier?name=" + document.getElementById("name1").value'
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </a>
+            </div>
+          </li>
         </ul>
 
         <div class="hamburger text-heading">
@@ -119,5 +138,5 @@
       </nav>
     </header>
     <!-- /Header -->
-  </body>
-</html>
+  <!-- </body>
+</html> -->
