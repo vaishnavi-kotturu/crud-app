@@ -38,7 +38,6 @@ route.get('/api/helpline', controller.get_no);
 route.get('/api/helplinelink', controller.helplinelink);
 route.get('/api/suppliers', controller.filtersupplier);
 
-
 route.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
 })
@@ -48,5 +47,6 @@ route.use((err, req, res, next) => {
     if (!err.message) err.message = 'Oh No, Something Went Wrong!'
     res.status(statusCode).render('error', { err })
 })
+
 
 module.exports=route
