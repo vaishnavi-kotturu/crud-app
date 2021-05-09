@@ -187,7 +187,7 @@ exports.filtersupplier = (req, res) => {
   // console.log(supplier);
   // console.log(city);
   if (supplier) {
-    Userdb.find({ name: supplier })
+    Userdb.find({ "name" : new RegExp(supplier)})
       .sort({ timestamp: -1 })
       .then((data) => {
         // console.log(data);
