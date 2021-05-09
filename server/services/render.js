@@ -71,20 +71,6 @@ exports.helpline=(req,res)=>{
             res.send(err);
       })
 }
-// let one = `http://localhost:${PORT}/api/suppliers`;
-//     let two = `http://localhost:${PORT}/api/city`;
-//     const requestOne = axios.get(one,{params:{supplier:req.query.name}});
-//     const requestTwo = axios.get(two);
-
-//     axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
-//         const responseOne = responses[0];
-//         const responseTwo = responses[1];
-//         const cities = responseTwo.data; 
-//         // console.log(responseOne.data);
-//         res.render('index',{users:responseOne.data, cities}); 
-//       })).catch(err => { 
-//             res.send(err);
-//       })
 
 
 exports.update_user=(req,res)=>{

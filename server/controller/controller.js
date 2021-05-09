@@ -183,9 +183,7 @@ exports.filtercity = (req, res) => {
 // Filter users based on supplier name
 exports.filtersupplier = (req, res) => {
   const supplier = req.query.supplier;
-  // console.dir(req);
-  // console.log(supplier);
-  // console.log(city);
+
   if (supplier) {
     Userdb.find({ "name" : new RegExp(supplier)})
       .sort({ timestamp: -1 })
@@ -218,7 +216,7 @@ exports.filtersupplier = (req, res) => {
       });
   }
 
-  // console.log("hit");
+
 };
 
 // Update a new identified user by user id

@@ -22,7 +22,7 @@ app.use(bodyparser.urlencoded({extended:false}))
 
 //set view engine
 app.set("view engine","ejs")
-// app.set("views",path.resolve(__dirname,"views/ejs"))
+// app.set("views",path.resolve(__dirname,"views/ejs")) // this or one of its variant do the job of letting the file execute properly from anywhere. It takes the dir of my server.js and then tries to find views folder
 
 
 //load assets
