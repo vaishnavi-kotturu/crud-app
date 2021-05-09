@@ -53,6 +53,7 @@ exports.helplinelink=(req,res)=>{
 } 
 
 
+
 exports.helpline=(req,res)=>{
     let one = `http://localhost:${PORT}/api/helpline`;
     let two = `http://localhost:${PORT}/api/city`;
@@ -70,6 +71,11 @@ exports.helpline=(req,res)=>{
             res.send(err);
       })
 }
+// let one = `http://localhost:${PORT}/api/suppliers`;
+//     let two = `http://localhost:${PORT}/api/city`;
+//     const requestOne = axios.get(one,{params:{supplier:req.query.name}});
+//     const requestTwo = axios.get(two);
+
 
 exports.update_user=(req,res)=>{
     let one = `http://localhost:${PORT}/api/users`;

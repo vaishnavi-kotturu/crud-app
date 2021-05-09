@@ -215,7 +215,6 @@ exports.filtersupplier = (req, res) => {
       });
   }
 
-};
 
 // Update a new identified user by user id
 exports.update = (req, res) => {
